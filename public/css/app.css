@@ -1,0 +1,36 @@
+form {
+    width: 30%;
+    border-radius: 50px;
+    box-shadow: 6px 6px 11px #c4c5c9, -6px -6px 11px #ffffff;
+    color: #555;
+    text-decoration: solid;
+}
+
+form .fields input {
+    border: none;
+    outline: none;
+    background: none;
+    padding: 5px 3px 5px 3px;
+}
+
+form .input-email,
+form .input-password {
+    border-radius: 10px;
+    box-shadow: inset 2px 2px 6px #c4c5c9, inset -2px -2px 6px #ffffff;
+}
+
+form .btn {
+    width: 80%;
+    box-shadow: 6px 6px 11px #c4c5c9, -6px -6px 11px #ffffff;
+}
+
+form .btn:hover {
+    box-shadow: inset 2px 2px 6px #c4c5c9, inset -2px -2px 6px #ffffff;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    form {
+        width: 100%;
+    }
+}
