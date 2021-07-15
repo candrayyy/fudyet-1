@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +21,8 @@ Route::get('/', function () {
 
 Route::get('admin/login', function () {
     return view('admin/login');
+});
+
+Route::get('admin/dashboard', function () {
+    return view('admin/dashboard');
 });
