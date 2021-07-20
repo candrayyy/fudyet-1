@@ -24,22 +24,12 @@
                     <label for="exampleInputEmail1" class="form-label">Email</label>
                     <div class="input-email"> <input type="email" class="form-control shadow-none" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" required></div>
                  </div>
-                 @error('email')
-                    <span class="invalid-feedback">{{$message}}</span>
-                 @enderror
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Password</label>
                     <div class="input-password"><input type="password" class="form-control shadow-none" id="exampleInputPassword1" name="password" required></div>
                     <input type="checkbox" class="mt-2 me-1" onclick="showHide()">Show password
                 </div>
-                 @error('password')
-                    <span class="invalid-feedback">{{$message}}</span>
-                 @enderror
              </div>
-           <!-- <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input shadow-none" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>-->
             <div class="text-center">
                  <button type="submit" class="btn">Login</button>
             </div>
