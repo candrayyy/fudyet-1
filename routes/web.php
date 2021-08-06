@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\Auth\LoginController;
+use App\Http\Controllers\FoodController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,5 +27,7 @@ Route::group(['middleware' => 'auth'], function () {
  
     Route::get('admin/dashboard', [HomeController::class, 'index'])->name('admin.dashboard');
     Route::get('admin/logout', [LoginController::class, 'logout'])->name('admin.logout');
- 
+   
+
+    Route::resource('admin/foods', FoodController::class);
 });
