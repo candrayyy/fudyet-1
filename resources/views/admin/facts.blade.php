@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@section('title', 'Foods')
+@section('title', 'Facts')
 @section('content')
     <section style="padding-top: 15px">
         <div class="container-fluid">
@@ -8,7 +8,7 @@
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-md-12 text-right">
-                            <a class="btn btn-dark rounded-pill" href="javascript:void(0)" id="createNewFood"> + Food</a>
+                            <a class="btn btn-dark rounded-pill" href="javascript:void(0)" id="createNewFact"> + Fact</a>
                         </div>
                         <div class="col-md-12 mt-2">
                             <table class="table table-hover data-table" style="width: 100%">
@@ -38,19 +38,19 @@
                 <h4 class="modal-title" id="modelHeading"></h4>
             </div>
             <div class="modal-body">
-                <form id="foodForm" name="foodForm" class="form-horizontal">
+                <form id="factForm" name="factForm" class="form-horizontal">
                     <input type="hidden" name="id" id="id">
                     <div class="form-group">
                         <label for="name" class="col-sm-2 control-label">Code</label>
                         <div class="col-sm-12">
-                            <input type="text" class="form-control" id="food_code" name="food_code" placeholder="Enter Code"  minlength="5" maxlength="5" required>
+                            <input type="text" class="form-control" id="fact_code" name="fact_code" placeholder="Enter Code"  minlength="5" maxlength="5" required>
                         </div>
                     </div>
      
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Name</label>
                         <div class="col-sm-12">
-                            <input type="text" class="form-control" id="food_name" name="food_name" placeholder="Enter Name" maxlength="50" required>
+                            <input type="text" class="form-control" id="fact_name" name="fact_name" placeholder="Enter Name" maxlength="50" required>
                         </div>
                     </div>
       
@@ -76,32 +76,32 @@
     var table = $('.data-table').DataTable({
         processing: true,
         serverSide: true,
-        ajax: "{{ route('foods.index') }}",
+        ajax: "{{ route('facts.index') }}",
         columns: [
             {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-            {data: 'food_code', name: 'food_code'},
-            {data: 'food_name', name: 'food_name'},
+            {data: 'fact_code', name: 'fact_code'},
+            {data: 'fact_name', name: 'act_name'},
             {data: 'action', name: 'action', orderable: false, searchable: false},
         ]
     });
      
-    $('#createNewFood').click(function () {
-        $('#saveBtn').val("create-food");
+    $('#createNewFact').click(function () {
+        $('#saveBtn').val("create-fact");
         $('#id').val('');
-        $('#foodForm').trigger("reset");
-        $('#modelHeading').html("Create New Food");
+        $('#factForm').trigger("reset");
+        $('#modelHeading').html("Create New Fact");
         $('#ajaxModel').modal('show');
     });
     
-    $('body').on('click', '.editFood', function () {
+    $('body').on('click', '.editFact', function () {
         var id = $(this).data('id');
-        $.get("{{ route('foods.index') }}" +'/' + id +'/edit', function (data) {
-            $('#modelHeading').html("Edit Food");
+        $.get("{{ route('facts.index') }}" +'/' + id +'/edit', function (data) {
+            $('#modelHeading').html("Edit Fact");
             $('#saveBtn').val("edit-user");
             $('#ajaxModel').modal('show');
             $('#id').val(data.id);
-            $('#food_code').val(data.food_code);
-            $('#food_name').val(data.food_name);
+            $('#fact_code').val(data.fact_code);
+            $('#fact_name').val(data.fact_name);
         })
     });
     
@@ -110,12 +110,12 @@
         $(this).html('Sending..');
     
         $.ajax({
-            data: $('#foodForm').serialize(),
-            url: "{{ route('foods.store') }}",
+            data: $('#factForm').serialize(),
+            url: "{{ route('facts.store') }}",
             type: "POST",
             dataType: 'json',
             success: function (data) {
-                $('#foodForm').trigger("reset");
+                $('#factForm').trigger("reset");
                 $('#ajaxModel').modal('hide');
                 $('#saveBtn').html('Create');
                 table.draw();
@@ -127,13 +127,13 @@
         });
     });
 
-    $('body').on('click', '.deleteFood', function (){
+    $('body').on('click', '.deleteFact', function (){
         var id = $(this).data("id");
         var result = confirm("Are You sure want to delete !");
         if(result){
             $.ajax({
                 type: "DELETE",
-                url: "{{ route('foods.store') }}"+'/'+id,
+                url: "{{ route('facts.store') }}"+'/'+id,
                 success: function (data) {
                     table.draw();
                 },

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Food;
+use App\Models\Fact;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 
-class FoodController extends Controller
+class FactController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,14 +16,14 @@ class FoodController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $data = Food::latest()->get();
+            $data = Fact::latest()->get();
             return Datatables::of($data)
                     ->addIndexColumn()
                     ->addColumn('action', function($row){
    
                            $btn = '<div class="text-center">
-                                        <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-info text-white editFood">Edit</a>
-                                        <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-outline-danger deleteFood">Delete</a>
+                                        <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-info text-white editFact">Edit</a>
+                                        <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-outline-danger deleteFact">Delete</a>
                                    </div>';
     
                         return $btn;
@@ -32,7 +32,7 @@ class FoodController extends Controller
                     ->make(true);
         }
       
-        return view('admin/foods');
+        return view('admin/facts');
     }
 
     /**
@@ -43,10 +43,10 @@ class FoodController extends Controller
      */
     public function store(Request $request)
     {
-        Food::updateOrCreate(['id' => $request->id],
-                ['food_code' => $request->food_code, 'food_name' => $request->food_name]);        
+        Fact::updateOrCreate(['id' => $request->id],
+                ['fact_code' => $request->fact_code, 'fact_name' => $request->fact_name]);        
    
-        return response()->json(['success'=>'Food saved successfully.']);
+        return response()->json(['success'=>'Fact saved successfully.']);
     }
     /**
      * Show the form for editing the specified resource.
@@ -56,8 +56,8 @@ class FoodController extends Controller
      */
     public function edit($id)
     {
-        $food = Food::find($id);
-        return response()->json($food);
+        $fact = Fact::find($id);
+        return response()->json($fact);
     }
 
     /**
@@ -68,8 +68,8 @@ class FoodController extends Controller
      */
     public function destroy($id)
     {
-        Food::find($id)->delete();
+        Fact::find($id)->delete();
      
-        return response()->json(['success'=>'Food deleted successfully.']);
+        return response()->json(['success'=>'Fact deleted successfully.']);
     }
 }

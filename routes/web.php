@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\FoodController;
+use App\Http\Controllers\FactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,4 +31,5 @@ Route::group(['middleware' => 'auth'], function () {
    
 
     Route::resource('admin/foods', FoodController::class);
+    Route::resource('admin/facts', FactController::class);
 });

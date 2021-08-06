@@ -11,6 +11,10 @@ class Fact extends Model
 
     protected $table = 'facts';
 
+    protected $fillable = [
+        'fact_code', 'fact_name'
+    ];
+
     public function foods() 
     {
         return $this->belongsToMany(Food::class, 'food_facts');
