@@ -54,7 +54,7 @@
                         </div>
                     </div>
       
-                    <div class="col-sm-offset-2 col-sm-10">
+                    <div class="col-sm-offset-2 col-sm-10 mt-2">
                         <button type="submit" class="btn btn-primary" id="saveBtn">Create</button>
                     </div>
                 </form>
