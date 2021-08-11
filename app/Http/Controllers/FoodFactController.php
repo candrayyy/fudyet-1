@@ -24,8 +24,8 @@ class FoodFactController extends Controller
                     ->addColumn('action', function($row){
    
                            $btn = '<div class="text-center">
-                                        <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-info text-white editFoodFact">Edit</a>
-                                        <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-outline-danger deleteFoodFact">Delete</a>
+                                        <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-info text-white editFoodFact"><i class="bi bi-pencil-fill"></i></a>
+                                        <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-outline-danger deleteFoodFact"><i class="bi bi-file-x-fill"></i></a>
                                    </div>';
     
                         return $btn;

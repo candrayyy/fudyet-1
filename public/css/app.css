@@ -1,4 +1,4 @@
-form {
+.form-login {
     width: 30%;
     border-radius: 50px;
     box-shadow: 6px 6px 11px #c4c5c9, -6px -6px 11px #ffffff;
@@ -6,31 +6,51 @@ form {
     text-decoration: solid;
 }
 
-form .fields input {
+.form-login .fields input {
     border: none;
     outline: none;
     background: none;
     padding: 5px 3px 5px 3px;
 }
 
-form .input-email,
-form .input-password {
+.form-login .input-email,
+.form-login .input-password {
     border-radius: 10px;
     box-shadow: inset 2px 2px 6px #c4c5c9, inset -2px -2px 6px #ffffff;
 }
 
-form .btn {
+.form-login .btn {
     width: 80%;
     box-shadow: 6px 6px 11px #c4c5c9, -6px -6px 11px #ffffff;
 }
 
-form .btn:hover {
+.form-login .btn:hover {
     box-shadow: inset 2px 2px 6px #c4c5c9, inset -2px -2px 6px #ffffff;
 }
 
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
-    form {
+    .form-login {
         width: 100%;
     }
+}
+
+.card-dashboard-wrapper {
+    background-color: unset !important;
+    border: none !important;
+}
+.card-dashboard {
+    width: 100%;
+    background-color: #eeeeee;
+    border-radius: 15px;
+    box-shadow: 6px 6px 11px #c4c5c9, -6px -6px 11px #ffffff;
+    color: #555;
+    text-decoration: solid;
+}
+
+.page-item.active .page-link {
+    background-color: rgb(225, 224, 224) !important;
+}
+.page-link {
+    color: rgb(9, 147, 172) !important;
 }

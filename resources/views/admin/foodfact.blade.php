@@ -8,7 +8,7 @@
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-md-12 text-right">
-                            <a class="btn btn-dark rounded-pill" href="javascript:void(0)" id="createNewFoodFact"> + Rules</a>
+                            <a class="btn btn-dark" href="javascript:void(0)" id="createNewFoodFact"><i class="bi bi-plus-circle-fill"></i></a>
                         </div>
                         <div class="col-md-12 mt-2">
                             <table class="table table-hover data-table" style="width: 100%">
@@ -41,10 +41,9 @@
                 <form id="foodFactForm" name="foodFactForm" class="form-horizontal">
                     <input type="hidden" name="id" id="id">
                     <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">Code</label>
+                        <label for="name" class="col-sm-2 control-label">Food ID</label>
                         <div class="col-sm-12">
                             <select name="food_id" id="food_id"  class="form-select form-select-sm" aria-label=".form-select-sm example">
-                                <option selected hidden>Pilih Makanan</option>
                                 @foreach($foods as $food)
                                     <option value="{{$food->id}}">{{$food->food_name}} - {{$food->food_code}} - {{$food->id}}</option>
                                 @endforeach
@@ -52,10 +51,9 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">Name</label>
+                        <label class="col-sm-2 control-label">Fact ID</label>
                         <div class="col-sm-12">
                             <select name="fact_id" id="fact_id"  class="form-select form-select-sm" aria-label=".form-select-sm example">
-                                <option selected hidden>Pilih Fakta</option>
                                 @foreach($facts as $fact)
                                     <option value="{{$fact->id}}">{{$fact->fact_name}} - {{$fact->fact_code}} - {{$fact->id}}</option>
                                 @endforeach
@@ -63,7 +61,7 @@
                         </div>
                     </div>
       
-                    <div class="col-sm-offset-2 col-sm-10">
+                    <div class="col-sm-offset-2 col-sm-10 mt-2">
                         <button type="submit" class="btn btn-primary" id="saveBtn">Create</button>
                     </div>
                 </form>

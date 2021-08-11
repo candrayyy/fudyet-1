@@ -11,12 +11,12 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Login</title>
   </head>
   <body style="background-color: #e7e8ed">
       <div class="d-flex flex-column min-vh-100 justify-content-center align-items-center">
        
-         <form class="p-4" action="{{route('admin.login')}}" method="POST">
+         <form class="p-4 form-login" action="{{route('admin.login')}}" method="POST">
            @csrf
              <h2 class="text-center">Login here</h2>
              <div class="fields">

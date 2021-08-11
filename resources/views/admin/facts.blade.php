@@ -8,7 +8,7 @@
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-md-12 text-right">
-                            <a class="btn btn-dark rounded-pill" href="javascript:void(0)" id="createNewFact"> + Fact</a>
+                            <a class="btn btn-dark" href="javascript:void(0)" id="createNewFact"><i class="bi bi-plus-circle-fill"></i></a>
                         </div>
                         <div class="col-md-12 mt-2">
                             <table class="table table-hover data-table" style="width: 100%">
