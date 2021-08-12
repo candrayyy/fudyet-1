@@ -10,13 +10,13 @@
                         <div class="col-md-12 text-right">
                             <a class="btn btn-dark" href="javascript:void(0)" id="createNewFood"><i class="bi bi-plus-circle-fill"></i></a>
                         </div>
-                        <div class="col-md-12 mt-2">
+                        <div class="col-md-12 mt-2 mb-5">
                             <table class="table table-hover data-table" style="width: 100%">
                                 <thead class="table-light">
                                     <tr>
                                         <th>No</th>
-                                        <th>Code</th>
                                         <th>Name</th>
+                                        <th>Category</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -41,16 +41,34 @@
                 <form id="foodForm" name="foodForm" class="form-horizontal">
                     <input type="hidden" name="id" id="id">
                     <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">Code</label>
+                        <label for="name" class="col-sm-2 control-label">Name</label>
                         <div class="col-sm-12">
-                            <input type="text" class="form-control" id="food_code" name="food_code" placeholder="Enter Code"  minlength="5" maxlength="5" required>
+                            <input type="text" class="form-control" id="food_name" name="food_name" placeholder="Enter name" required>
                         </div>
                     </div>
      
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">Name</label>
+                        <label class="col-sm-2 control-label">Category</label>
                         <div class="col-sm-12">
-                            <input type="text" class="form-control" id="food_name" name="food_name" placeholder="Enter Name" maxlength="50" required>
+                            <select name="food_category" id="food_category"  class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                <!--hardcode hehe -->
+                                    <option value="Meats & Poultry">Meats & Poultry</option>
+                                    <option value="Seafood">Seafood</option>
+                                    <option value="Eggs & Dairy">Eggs & Dairy</option>
+                                    <option value="Oils & Fats">Oils & Fats</option>
+                                    <option value="Nuts & Seeds">Nuts & Seeds</option>
+                                    <option value="Beans & Legumes">Beans & Legumes</option>
+                                    <option value="Cereals">Cereals</option>
+                                    <option value="Breads & Muffins">Breads & Muffins</option>
+                                    <option value="Grains & Pastas">Grains & Pastas</option>
+                                    <option value="Vegetables">Vegetables</option>
+                                    <option value="Fruit">Fruit</option>
+                                    <option value="Juices & Fluids">Juices & Fluids</option>
+                                    <option value="Condiments">Condiments</option>
+                                    <option value="Spices">Spices</option>
+                                    <option value="Herbal Teas">Herbal Teas</option>
+                                    <option value="Misc Beverages">Misc Beverages</option>
+                            </select>
                         </div>
                     </div>
       
@@ -79,8 +97,8 @@
         ajax: "{{ route('foods.index') }}",
         columns: [
             {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-            {data: 'food_code', name: 'food_code'},
             {data: 'food_name', name: 'food_name'},
+            {data: 'food_category', name: 'food_category'},
             {data: 'action', name: 'action', orderable: false, searchable: false},
         ]
     });
@@ -100,8 +118,8 @@
             $('#saveBtn').val("edit-user");
             $('#ajaxModel').modal('show');
             $('#id').val(data.id);
-            $('#food_code').val(data.food_code);
             $('#food_name').val(data.food_name);
+            $('#food_category').val(data.food_category);
         })
     });
     

@@ -12,7 +12,7 @@ class Food extends Model
     protected $table = 'foods';
 
     protected $fillable = [
-        'food_code', 'food_name'
+        'food_name', 'food_category'
     ];
 
     public function facts() 

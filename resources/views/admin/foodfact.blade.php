@@ -45,7 +45,7 @@
                         <div class="col-sm-12">
                             <select name="food_id" id="food_id"  class="form-select form-select-sm" aria-label=".form-select-sm example">
                                 @foreach($foods as $food)
-                                    <option value="{{$food->id}}">{{$food->food_name}} - {{$food->food_code}} - {{$food->id}}</option>
+                                    <option value="{{$food->id}}">{{$food->food_name}} - {{$food->food_category}} - {{$food->id}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -55,7 +55,7 @@
                         <div class="col-sm-12">
                             <select name="fact_id" id="fact_id"  class="form-select form-select-sm" aria-label=".form-select-sm example">
                                 @foreach($facts as $fact)
-                                    <option value="{{$fact->id}}">{{$fact->fact_name}} - {{$fact->fact_code}} - {{$fact->id}}</option>
+                                    <option value="{{$fact->id}}">{{$fact->fact_name}} - {{$fact->id}}</option>
                                 @endforeach
                             </select>
                         </div>

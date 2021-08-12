@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\FactController;
 use App\Http\Controllers\FoodFactController;
+use App\Http\Controllers\FormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,9 @@ use App\Http\Controllers\FoodFactController;
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('/form', [FormController::class, 'index']);
+Route::post('/form', [FormController::class, 'formSubmit'])->name('form.formsubmit');
 
 Route::get('admin/login', [LoginController::class, 'showFormLogin'])->name('admin.login');
 Route::post('admin/login', [LoginController::class, 'login'])->name('admin.login');

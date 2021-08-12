@@ -44,7 +44,7 @@ class FoodController extends Controller
     public function store(Request $request)
     {
         Food::updateOrCreate(['id' => $request->id],
-                ['food_code' => $request->food_code, 'food_name' => $request->food_name]);        
+                ['food_name' => $request->food_name, 'food_category' => $request->food_category]);        
    
         return response()->json(['success'=>'Food saved successfully.']);
     }

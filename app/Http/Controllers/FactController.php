@@ -44,7 +44,7 @@ class FactController extends Controller
     public function store(Request $request)
     {
         Fact::updateOrCreate(['id' => $request->id],
-                ['fact_code' => $request->fact_code, 'fact_name' => $request->fact_name]);        
+                ['fact_name' => $request->fact_name]);        
    
         return response()->json(['success'=>'Fact saved successfully.']);
     }

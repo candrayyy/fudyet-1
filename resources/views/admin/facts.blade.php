@@ -15,7 +15,6 @@
                                 <thead class="table-light">
                                     <tr>
                                         <th>No</th>
-                                        <th>Code</th>
                                         <th>Name</th>
                                         <th></th>
                                     </tr>
@@ -40,12 +39,6 @@
             <div class="modal-body">
                 <form id="factForm" name="factForm" class="form-horizontal">
                     <input type="hidden" name="id" id="id">
-                    <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">Code</label>
-                        <div class="col-sm-12">
-                            <input type="text" class="form-control" id="fact_code" name="fact_code" placeholder="Enter Code"  minlength="5" maxlength="5" required>
-                        </div>
-                    </div>
      
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Name</label>
@@ -79,7 +72,6 @@
         ajax: "{{ route('facts.index') }}",
         columns: [
             {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-            {data: 'fact_code', name: 'fact_code'},
             {data: 'fact_name', name: 'act_name'},
             {data: 'action', name: 'action', orderable: false, searchable: false},
         ]
@@ -100,7 +92,6 @@
             $('#saveBtn').val("edit-user");
             $('#ajaxModel').modal('show');
             $('#id').val(data.id);
-            $('#fact_code').val(data.fact_code);
             $('#fact_name').val(data.fact_name);
         })
     });

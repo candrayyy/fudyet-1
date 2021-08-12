@@ -54,3 +54,26 @@
 .page-link {
     color: rgb(9, 147, 172) !important;
 }
+
+.form-step {
+    padding-top: 100px;
+}
+
+.form-section {
+    display: none;
+}
+
+.form-section.current {
+    display: inherit;
+}
+
+.btn-multistep {
+    margin-top: 10px;
+}
+
+.parsley-errors-list {
+    margin: 2px 0 3px;
+    padding: 0;
+    list-style-type: none;
+    color: red;
+}

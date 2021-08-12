@@ -15,7 +15,6 @@ class CreateFactsTable extends Migration
     {
         Schema::create('facts', function (Blueprint $table) {
             $table->id();
-            $table->string('fact_code');
             $table->string('fact_name');
             $table->timestamps();
         });
