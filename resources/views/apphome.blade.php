@@ -12,7 +12,7 @@
 
     <title>@yield('title')</title>
   </head>
-  <body style="background-color: #FFFCF7"> <!-- rgb(247, 247, 247)   #d9ca62-->
+  <body style="background-color: #EEEEEE"> <!-- rgb(247, 247, 247)   #d9ca62-->
 
         @section('nav')
             @include('nav')

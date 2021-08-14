@@ -59,6 +59,15 @@
     padding-top: 100px;
 }
 
+.recommendation-wrapper-form {
+    width: 100%;
+    background-color: #eeeeee;
+    border-radius: 15px;
+    box-shadow: 6px 6px 11px #c4c5c9, -6px -6px 11px #ffffff;
+    color: #555;
+    text-decoration: solid;
+}
+
 .form-section {
     display: none;
 }

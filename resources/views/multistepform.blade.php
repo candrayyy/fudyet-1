@@ -5,32 +5,23 @@
    <section class="form-step">
        <div class="container">
            <div class="row">
-               <div class="col-md-6 offset-md-3">
-                   <div class="card-header text-white bg-info">
-                       <h5>Multi Step Form</h5>
+               <div class="col-md-6 offset-md-3 recommendation-wrapper-form">
+                   <div class="card-header bg-transparent">
+                       <h5>Recommendation Form</h5>
                    </div>
                    <div class="card-body">
-                       <form method="POST" action="{{route('form.formsubmit')}}" class="contact-form">
+                       <form method="POST" action="{{route('form.formsubmit')}}" class="recommendation-form">
                            @csrf
                            <div class="form-section">
-                               <label for="firstname">Firstname:</label>
-                               <input type="text" name="firstname" class="form-control" id="" required>
-                               <label for="firstname">Lastname:</label>
-                               <input type="text" name="lastname" class="form-control" id="" required>
-                           </div>
-
-                            <div class="form-section">
-                               <label for="firstname">Firstname:</label>
-                               <input type="text" name="firstname" class="form-control" id="" required>
-                               <label for="firstname">Lastname:</label>
-                               <input type="text" name="lastname" class="form-control" id="" required>
-                           </div>
-
-                            <div class="form-section">
-                               <label for="firstname">Firstname:</label>
-                               <input type="text" name="firstname" class="form-control" id="" required>
-                               <label for="firstname">Lastname:</label>
-                               <input type="text" name="lastname" class="form-control" id="" required>
+                                <h5>Your Blood Type ?</h5>
+                                <input type="radio" id="a" name="blood_type" value="1" required>
+                                <label for="a">A</label><br>
+                                <input type="radio" id="ab" name="blood_type" value="2">
+                                <label for="ab">B</label><br>
+                                <input type="radio" id="b" name="blood_type" value="3">
+                                <label for="b">AB</label><br>
+                                <input type="radio" id="o" name="blood_type" value="4">
+                                <label for="o">O</label>
                            </div>
 
                            <div class="form-navigation">
@@ -67,7 +58,7 @@
            })
 
            $('.form-navigation .next').click(function() {
-                $('.contact-form').parsley().whenValidate({
+                $('.recommendation-form').parsley().whenValidate({
                     group: 'block-' + curIndex()
                 }).done(function() {
                     navigateTo(curIndex()+1);
