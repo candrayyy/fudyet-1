@@ -15,12 +15,23 @@ class FormController extends Controller
 
     public function formSubmit(Request $req)
     {
-        /*return FoodFact::where('fact_id', $req->blood_type)->get();*/
         $datas = FoodFact::getData()
                 ->where('food_facts.fact_id', $req->blood_type)
                 ->select(['foods.food_name', 'foods.food_category'])
                 ->get();
 
-        return view('formresults', ['datas' => $datas]);
+        $attrs = [];
+        foreach ($datas as $data) {
+            $attrs[$data->food_category][] =  $data->food_name;
+        }
+
+        $keys = collect($attrs);
+
+        foreach ($keys as $key => $value) {
+            $dataCategories[] = $value;
+        }
+
+
+        return view('formresults', [ 'keys' => $keys, 'dataCategories' => $dataCategories]);
     }
 }

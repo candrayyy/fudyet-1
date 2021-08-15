@@ -10,7 +10,7 @@
                         <div class="col-md-12 text-right">
                             <a class="btn btn-dark" href="javascript:void(0)" id="createNewFact"><i class="bi bi-plus-circle-fill"></i></a>
                         </div>
-                        <div class="col-md-12 mt-2">
+                        <div class="col-md-12 mt-2 mb-5">
                             <table class="table table-hover data-table" style="width: 100%">
                                 <thead class="table-light">
                                     <tr>

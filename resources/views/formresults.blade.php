@@ -1,21 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-   <table border="1">
-       @foreach ($datas as $data)
-           <tr>
-               <th>{{ $data->food_category }}</th>
-           </tr>
-           <tr>
-               <td>{{ $data->food_name }}</td>
-           </tr>
-       @endforeach
+@extends('apphome')
+
+@section('title', 'Form Results')
+@section('content')
+   <table class="table table-bordered border-dark" style="width: 60%; margin: 0 auto">
+        <thead class="text-center">
+            <th>Categories</th>
+            <th>Foods</th>
+        </thead>
+       @foreach($keys as $category => $dataCategories)
+            <tbody>
+                <td style="vertical-align: middle; font-weight: bold" class="text-center">{{ $category }}</td>
+                <td style="vertical-align: middle">
+                    @foreach($dataCategories as $index => $value)
+                        {{ $loop->first ? '' : '-' }}
+                        {{ $value }}
+                    @endforeach
+                </td>
+            </tbody>
+        @endforeach
    </table>
-</body>
-</html>
+@endsection
