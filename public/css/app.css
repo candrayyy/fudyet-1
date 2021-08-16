@@ -86,3 +86,21 @@
     list-style-type: none;
     color: red;
 }
+
+.form-results {
+    display: none;
+    opacity: 0;
+    transition: opacity 2s ease-in;
+}
+
+.loader {
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+    background-color: #eeeeee;
+}
+
+.img-loader {
+    width: 40%;
+}

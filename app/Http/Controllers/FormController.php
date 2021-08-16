@@ -25,13 +25,11 @@ class FormController extends Controller
             $attrs[$data->food_category][] =  $data->food_name;
         }
 
-        $keys = collect($attrs);
-
-        foreach ($keys as $key => $value) {
+        foreach ($attrs as $attr => $value) {
             $dataCategories[] = $value;
         }
 
 
-        return view('formresults', [ 'keys' => $keys, 'dataCategories' => $dataCategories]);
+        return view('formresults', [ 'attrs' => $attrs, 'dataCategories' => $dataCategories]);
     }
 }
