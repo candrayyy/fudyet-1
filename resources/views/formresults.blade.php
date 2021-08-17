@@ -10,9 +10,9 @@
 
     <title>Form Results</title>
 </head>
-<body style="background-color: #EEEEEE">
+<body>
     <section class="form-results mt-5 mb-5 table-responsive">
-        <table class="table table-bordered border-dark" style="width: 70%; margin: 0 auto">
+        <table class="table table-form-result">
                 <thead class="text-center">
                     <th>Categories</th>
                     <th>Foods</th>

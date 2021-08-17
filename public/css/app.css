@@ -1,3 +1,226 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol,
+ul {
+    list-style: none;
+}
+blockquote,
+q {
+    quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* END CSS RESET */
+
+body {
+    background-color: #f7f6f6 !important;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        color: #eee !important;
+        background-color: #272727 !important;
+    }
+
+    body a {
+        color: #eee !important;
+    }
+
+    td,
+    label,
+    input,
+    button,
+    h1,
+    h2,
+    h3,
+    h4,
+    p {
+        color: #eee !important;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="search"],
+    input[type="password"] {
+        color: #272727 !important;
+    }
+
+    .input-email,
+    .input-password {
+        background-color: #eee !important;
+    }
+
+    .question-button-label,
+    .dataTables_processing,
+    .recommendation-wrapper-form,
+    .form-login,
+    .card-dashboard,
+    button {
+        box-shadow: 6px 6px 11px #c4c5c9, -6px -6px 11px #e4e4e4 !important;
+    }
+
+    .dropdown-item:hover {
+        background-color: #292929 !important;
+    }
+
+    .table-form-result {
+        border: 3px dashed #eee !important;
+        width: 70% !important;
+        margin: 0 auto !important;
+    }
+
+    .table-form-result th,
+    .table-form-result td {
+        border: 1px solid #eee !important;
+    }
+
+    th {
+        background-color: #303030 !important;
+        color: #eee;
+    }
+
+    #a:checked + .question-button-label {
+        color: #212121 !important;
+    }
+
+    #b:checked + .question-button-label {
+        color: #212121 !important;
+    }
+
+    #ab:checked + .question-button-label {
+        color: #212121 !important;
+    }
+
+    #o:checked + .question-button-label {
+        color: #212121 !important;
+    }
+
+    .card-body,
+    #sidebar-wrapper,
+    .list-group-item,
+    .modal-content,
+    .dropdown-menu,
+    .dataTables_processing,
+    .page-link,
+    .loader,
+    button {
+        background-color: #272727 !important;
+    }
+}
+
 .form-login {
     width: 30%;
     border-radius: 50px;
@@ -31,7 +254,7 @@
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
     .form-login {
-        width: 100%;
+        width: 85%;
     }
 }
 
@@ -41,18 +264,14 @@
 }
 .card-dashboard {
     width: 100%;
-    background-color: #eeeeee;
     border-radius: 15px;
     box-shadow: 6px 6px 11px #c4c5c9, -6px -6px 11px #ffffff;
     color: #555;
     text-decoration: solid;
 }
 
-.page-item.active .page-link {
-    background-color: rgb(225, 224, 224) !important;
-}
-.page-link {
-    color: rgb(9, 147, 172) !important;
+.list-group-item {
+    background-color: unset !important;
 }
 
 .form-step {
@@ -61,7 +280,6 @@
 
 .recommendation-wrapper-form {
     width: 100%;
-    background-color: #eeeeee;
     border-radius: 15px;
     box-shadow: 6px 6px 11px #c4c5c9, -6px -6px 11px #ffffff;
     color: #555;
@@ -93,14 +311,87 @@
     transition: opacity 2s ease-in;
 }
 
+.table-form-result {
+    border: 3px dashed #313131 !important;
+    width: 70% !important;
+    margin: 0 auto !important;
+}
+
+.table-form-result th,
+.table-form-result td {
+    border: 1px solid #313131;
+}
+
 .loader {
     display: flex;
     margin-top: 30px;
     justify-content: center;
     align-items: center;
-    background-color: #eeeeee;
+    background-color: #f7f6f6;
 }
 
 .img-loader {
     width: 40%;
+}
+
+.form-section {
+    text-align: center;
+}
+
+.form-section .question-button-label {
+    display: inline-block;
+    padding: 1em 2em;
+    margin: 0.5em;
+    cursor: pointer;
+    color: #d9ca63;
+    font-weight: bold;
+    border-radius: 0.25em;
+    transition: 0.3s;
+    user-select: none;
+    box-shadow: 6px 6px 11px #c4c5c9, -6px -6px 11px #ffffff;
+}
+
+.form-section .question-button-label:hover {
+    background-color: #d9ca63;
+    color: #efefef;
+}
+
+.form-section .question-button-label:active {
+    transform: scale(1.1);
+    color: #efefef;
+}
+
+@media (max-width: 40em) {
+    .question-button-label {
+        padding: 0em 1em 3px;
+        margin: 0.25em;
+    }
+}
+
+.blood-icon {
+    font-size: 200%;
+}
+
+#a:checked + .question-button-label {
+    background-color: #d6c556;
+    color: #efefef;
+}
+
+#b:checked + .question-button-label {
+    background-color: #d6c556;
+    color: #efefef;
+}
+
+#ab:checked + .question-button-label {
+    background-color: #d6c556;
+    color: #efefef;
+}
+
+#o:checked + .question-button-label {
+    background-color: #d6c556;
+    color: #efefef;
+}
+
+.form-section .question-circle-radio {
+    display: none;
 }

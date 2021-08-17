@@ -22,8 +22,8 @@ class FactController extends Controller
                     ->addColumn('action', function($row){
    
                            $btn = '<div class="text-center">
-                                        <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-info text-white editFact"><i class="bi bi-pencil-fill"></i></a>
-                                        <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-outline-danger deleteFact"><i class="bi bi-file-x-fill"></i></a>
+                                        <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-warning text-white editFact"><i class="bi bi-pencil-fill"></i></a>
+                                        <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-outline-danger text-warning deleteFact"><i class="bi bi-trash2-fill"></i></i></a>
                                    </div>';
     
                         return $btn;
