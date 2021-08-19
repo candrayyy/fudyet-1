@@ -31,7 +31,6 @@ class FactController extends Controller
                     ->rawColumns(['action'])
                     ->make(true);
         }
-      
         return view('admin/facts');
     }
 

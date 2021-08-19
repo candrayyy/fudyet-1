@@ -17,7 +17,7 @@ class FoodFact extends Model
     ];
 
 
-    public static function getData()
+    public static function getDataFoodFact()
     {
         return DB::table('food_facts')
                 ->join('foods', function($join) {

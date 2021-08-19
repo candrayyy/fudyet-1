@@ -16,6 +16,7 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Name</th>
+                                        <th>ID</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -72,7 +73,8 @@
         ajax: "{{ route('facts.index') }}",
         columns: [
             {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-            {data: 'fact_name', name: 'act_name'},
+            {data: 'fact_name', name: 'fact_name'},
+            {data: 'id', name: 'id'},
             {data: 'action', name: 'action', orderable: false, searchable: false},
         ]
     });
