@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFactsTable extends Migration
+class CreateBloodsFactTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateFactsTable extends Migration
      */
     public function up()
     {
-        Schema::create('facts', function (Blueprint $table) {
+        Schema::create('bloods_fact', function (Blueprint $table) {
             $table->id();
-            $table->string('fact_name');
+            $table->string('blood_type');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateFactsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('facts');
+        Schema::dropIfExists('bloods_fact');
     }
 }

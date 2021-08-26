@@ -13,9 +13,8 @@ class FoodFact extends Model
     protected $table = 'food_facts';
 
     protected $fillable = [
-        'food_id', 'fact_id'
+        'food_id', 'blood_type_id', 'allergy_name_id'
     ];
-
 
     public static function getDataFoodFact()
     {

@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@section('title', 'Facts')
+@section('title', 'Blood Type')
 @section('content')
     <section style="padding-top: 15px">
         <div class="container-fluid">
@@ -8,14 +8,14 @@
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-md-12 text-right">
-                            <a class="btn btn-dark" href="javascript:void(0)" id="createNewFact"><i class="bi bi-plus-circle-fill"></i> add fact</a>
+                            <a class="btn btn-dark" href="javascript:void(0)" id="createNewBloodType"><i class="bi bi-plus-circle-fill"></i> add blood type</a>
                         </div>
                         <div class="col-md-12 mt-2 mb-5">
                             <table class="table table-hover data-table" style="width: 100%">
                                 <thead class="table-light">
                                     <tr>
                                         <th>No</th>
-                                        <th>Name</th>
+                                        <th>Type</th>
                                         <th>ID</th>
                                         <th></th>
                                     </tr>
@@ -38,13 +38,13 @@
                 <h4 class="modal-title" id="modelHeading"></h4>
             </div>
             <div class="modal-body">
-                <form id="factForm" name="factForm" class="form-horizontal">
+                <form id="bloodTypeForm" name="bloodTypeForm" class="form-horizontal">
                     <input type="hidden" name="id" id="id">
      
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">Name</label>
+                        <label class="col-sm-2 control-label">Type</label>
                         <div class="col-sm-12">
-                            <input type="text" class="form-control" id="fact_name" name="fact_name" placeholder="Enter Name" maxlength="50" required>
+                            <input type="text" class="form-control" id="blood_type" name="blood_type" placeholder="Enter Type" maxlength="50" required>
                         </div>
                     </div>
       
@@ -70,31 +70,31 @@
     var table = $('.data-table').DataTable({
         processing: true,
         serverSide: true,
-        ajax: "{{ route('facts.index') }}",
+        ajax: "{{ route('blood-fact.index') }}",
         columns: [
             {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-            {data: 'fact_name', name: 'fact_name'},
+            {data: 'blood_type', name: 'blood_type'},
             {data: 'id', name: 'id'},
             {data: 'action', name: 'action', orderable: false, searchable: false},
         ]
     });
      
-    $('#createNewFact').click(function () {
-        $('#saveBtn').val("create-fact");
+    $('#createNewBloodType').click(function () {
+        $('#saveBtn').val("create-blood-type");
         $('#id').val('');
-        $('#factForm').trigger("reset");
-        $('#modelHeading').html("Create New Fact");
+        $('#bloodTypeForm').trigger("reset");
+        $('#modelHeading').html("Create New Blood Type");
         $('#ajaxModel').modal('show');
     });
     
-    $('body').on('click', '.editFact', function () {
+    $('body').on('click', '.editBloodFact', function () {
         var id = $(this).data('id');
-        $.get("{{ route('facts.index') }}" +'/' + id +'/edit', function (data) {
-            $('#modelHeading').html("Edit Fact");
+        $.get("{{ route('blood-fact.index') }}" +'/' + id +'/edit', function (data) {
+            $('#modelHeading').html("Edit Blood Fact");
             $('#saveBtn').val("edit-user");
             $('#ajaxModel').modal('show');
             $('#id').val(data.id);
-            $('#fact_name').val(data.fact_name);
+            $('#blood_type').val(data.blood_type);
         })
     });
     
@@ -103,12 +103,12 @@
         $(this).html('Sending..');
     
         $.ajax({
-            data: $('#factForm').serialize(),
-            url: "{{ route('facts.store') }}",
+            data: $('#bloodTypeForm').serialize(),
+            url: "{{ route('blood-fact.store') }}",
             type: "POST",
             dataType: 'json',
             success: function (data) {
-                $('#factForm').trigger("reset");
+                $('#bloodTypeForm').trigger("reset");
                 $('#ajaxModel').modal('hide');
                 $('#saveBtn').html('Create');
                 table.draw();
@@ -120,13 +120,13 @@
         });
     });
 
-    $('body').on('click', '.deleteFact', function (){
+    $('body').on('click', '.deleteBloodType', function (){
         var id = $(this).data("id");
         var result = confirm("Are You sure want to delete !");
         if(result){
             $.ajax({
                 type: "DELETE",
-                url: "{{ route('facts.store') }}"+'/'+id,
+                url: "{{ route('blood-fact.store') }}"+'/'+id,
                 success: function (data) {
                     table.draw();
                 },

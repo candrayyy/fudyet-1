@@ -5,18 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Fact extends Model
+class BloodFact extends Model
 {
     use HasFactory;
 
-    protected $table = 'facts';
+    protected $table = 'bloods_fact';
 
     protected $fillable = [
-        'fact_name'
+        'blood_type'
     ];
-
-    public function foods() 
-    {
-        return $this->belongsToMany(Food::class, 'food_facts');
-    }
 }

@@ -17,31 +17,35 @@ class FormController extends Controller
 
     public function formSubmit(Request $req)
     {
-        /*DB::enableQueryLog(); */
-        $datas = FoodFact::getDataFoodFact()
-                ->where('food_facts.fact_id', $req->blood_type)
-                ->orWhere(function($query) use($req) {
-                     $query->where('food_facts.fact_id', [$req->dairy_free])
-                           ->orWhere('food_facts.fact_id', [$req->seafood_free]);
-                })
-                ->select(['foods.food_name', 'foods.food_category'])
-                ->get();
 
-        /*if (($req->seafood_free == false) and ($req->dairy_free == false)) {
-              $datas = $datasS->get();
-        } else if ($req->dairy_free) {
-            $datas = $datasS->whereNotIn('food_facts.fact_id', [$req->dairy_free])->get();
-        } else if ($req->seafood_free) {
-            $datas = $datasS->whereNotIn('food_facts.fact_id', [$req->seafood_free])->get();
-        } else if ($req->dairy_free and $req->seafood_free) {
-            $datas = $datasS->whereNotIn('food_facts.fact_id', [$req->dairy_free])
-                            ->whereNotIn('food_facts.fact_id', [$req->seafood_free])
-                            ->get();
-        }*/
+        /* { other join way }
+        /*DB::table('foods')
+                ->join('food_facts', 'foods.id', '=', 'food_facts.food_id')
+                ->join('facts', 'food_facts.fact_id', '=', 'facts.id')*/
 
-        /*DB::getQueryLog(); */
-        /*dd($datas);*/
-     
+        /* { get foods by blood type } */
+        $getByBlood = FoodFact::getDataFoodFact()
+                    ->select('*')
+                    ->where('food_facts.blood_type_id', $req->blood_type);
+
+        $datas = $getByBlood->get();
+
+        /* { selecting based on allergies } */
+        if ($req->dairy_free) {
+
+            $datas = $getByBlood
+                    ->where('food_facts.allergy_name_id', '<>', $req->dairy_free) 
+                    ->get();
+        }
+
+        if ($req->seafood_free) {
+
+            $datas = $getByBlood
+                    ->where('food_facts.allergy_name_id', '<>', $req->seafood_free)
+                    ->get();
+        }
+
+        /* { mapping data for view } */
         $attrs = [];
         foreach ($datas as $data) {
             $attrs[$data->food_category][] =  $data->food_name;
@@ -51,8 +55,6 @@ class FormController extends Controller
             $dataCategories[] = $value;
         }
 
-
-
-    return view('formresults', [ 'attrs' => $attrs, 'dataCategories' => $dataCategories]);
+        return view('formresults', [ 'attrs' => $attrs, 'dataCategories' => $dataCategories]);
     }
 }
