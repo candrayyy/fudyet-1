@@ -22,14 +22,24 @@
                                 <label for="o" class="question-button-label"><div class="blood-icon"><i class="bi bi-droplet"></i></div>O</label>
                            </div>
 
-                            <div class="form-section">
+                           <div class="form-section">
                                 <h4 class="mb-5">Do you have any food allergies ?</h4>
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                                <label for="vehicle1"> I have a bike</label><br>
-                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-                                <label for="vehicle2"> I have a car</label><br>
-                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-                                <label for="vehicle3"> I have a boat</label><br><br>
+                                <input type="checkbox" class="question-radio-label" id="seafood" name="seafood_free" value="1">
+                                <label for="seafood" class="question-button-label"><div class="blood-icon"><i class="bi bi-droplet"></i></div>Seafood-Free</label>
+                                <input type="checkbox" class="question-radio-label" id="dairy" name="dairy_free" value="2">
+                                <label for="dairy" class="question-button-label"><div class="blood-icon"><i class="bi bi-droplet"></i></div>Dairy-Free</label>
+                                <input type="checkbox" class="question-radio-label" id="seafood" name="seafood_free" value="1">
+                                <label for="seafood" class="question-button-label"><div class="blood-icon"><i class="bi bi-droplet"></i></div>Seafood-Free</label>
+                                <input type="checkbox" class="question-radio-label" id="dairy" name="dairy_free" value="2">
+                                <label for="dairy" class="question-button-label"><div class="blood-icon"><i class="bi bi-droplet"></i></div>Dairy-Free</label>
+                                <input type="checkbox" class="question-radio-label" id="seafood" name="seafood_free" value="1">
+                                <label for="seafood" class="question-button-label"><div class="blood-icon"><i class="bi bi-droplet"></i></div>Seafood-Free</label>
+                                <input type="checkbox" class="question-radio-label" id="dairy" name="dairy_free" value="2">
+                                <label for="dairy" class="question-button-label"><div class="blood-icon"><i class="bi bi-droplet"></i></div>Dairy-Free</label>
+                                <input type="checkbox" class="question-radio-label" id="seafood" name="seafood_free" value="1">
+                                <label for="seafood" class="question-button-label"><div class="blood-icon"><i class="bi bi-droplet"></i></div>Seafood-Free</label>
+                                <input type="checkbox" class="question-radio-label" id="dairy" name="dairy_free" value="2">
+                                <label for="dairy" class="question-button-label"><div class="blood-icon"><i class="bi bi-droplet"></i></div>Dairy-Free</label>
                            </div>
 
                            <div class="form-navigation">

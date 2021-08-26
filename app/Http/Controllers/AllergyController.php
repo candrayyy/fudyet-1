@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Fact;
+use App\Models\AllergyFact;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 
-class FactController extends Controller
+class AllergyController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,14 +16,14 @@ class FactController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $data = Fact::latest()->get();
+            $data = AllergyFact::latest()->get();
             return Datatables::of($data)
                     ->addIndexColumn()
                     ->addColumn('action', function($row){
    
                            $btn = '<div class="text-center">
-                                        <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-warning text-white editFact"><i class="bi bi-pencil-fill"></i></a>
-                                        <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-outline-danger text-warning deleteFact"><i class="bi bi-trash2-fill"></i></i></a>
+                                        <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-warning text-white editAllergyFact"><i class="bi bi-pencil-fill"></i></a>
+                                        <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-outline-danger text-warning deleteAllergyFact"><i class="bi bi-trash2-fill"></i></i></a>
                                    </div>';
     
                         return $btn;
@@ -32,7 +32,7 @@ class FactController extends Controller
                     ->make(true);
         }
       
-        return view('admin/facts');
+        return view('admin/allergyfact');
     }
 
     /**
@@ -43,10 +43,10 @@ class FactController extends Controller
      */
     public function store(Request $request)
     {
-        Fact::updateOrCreate(['id' => $request->id],
-                ['fact_name' => $request->fact_name]);        
+        AllergyFact::updateOrCreate(['id' => $request->id],
+                ['allergy_name' => $request->allergy_name]);        
    
-        return response()->json(['success'=>'Fact saved successfully.']);
+        return response()->json(['success'=>'Allergy name saved successfully.']);
     }
     /**
      * Show the form for editing the specified resource.
@@ -56,8 +56,8 @@ class FactController extends Controller
      */
     public function edit($id)
     {
-        $fact = Fact::find($id);
-        return response()->json($fact);
+        $food = AllergyFact::find($id);
+        return response()->json($food);
     }
 
     /**
@@ -68,8 +68,8 @@ class FactController extends Controller
      */
     public function destroy($id)
     {
-        Fact::find($id)->delete();
+        AllergyFact::find($id)->delete();
      
-        return response()->json(['success'=>'Fact deleted successfully.']);
+        return response()->json(['success'=>'Allergy fact deleted successfully.']);
     }
 }

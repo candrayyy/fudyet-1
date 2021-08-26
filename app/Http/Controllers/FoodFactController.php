@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\FoodFact;
 use App\Models\Food;
-use App\Models\Fact;
+use App\Models\BloodFact;
+use App\Models\AllergyFact;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 
@@ -35,9 +36,10 @@ class FoodFactController extends Controller
         }
         
         $getFood = Food::get();
-        $getFact = Fact::get();
+        $getBloodType = BloodFact::get();
+        $getAllergyName = AllergyFact::get();
         $getFoodFact = FoodFact::get();
-        return view('admin/foodfact', ['foods' => $getFood, 'facts' => $getFact, 'food_facts' => $getFoodFact]);
+        return view('admin/foodfact', ['foods' => $getFood, 'bloods_fact' => $getBloodType, 'allergies_fact' => $getAllergyName, 'food_facts' => $getFoodFact]);
     }
 
     /**
@@ -49,7 +51,7 @@ class FoodFactController extends Controller
     public function store(Request $request)
     {
         FoodFact::updateOrCreate(['id' => $request->id],
-                ['food_id' => $request->food_id, 'fact_id' => $request->fact_id]);        
+                ['food_id' => $request->food_id, 'blood_type_id' => $request->blood_type_id, 'allergy_name_id' => $request->allergy_name_id]);        
    
         return response()->json(['success'=>'Food fact saved successfully.']);
     }
@@ -61,8 +63,8 @@ class FoodFactController extends Controller
      */
     public function edit($id)
     {
-        $fact = FoodFact::find($id);
-        return response()->json($fact);
+        $foodFact = FoodFact::find($id);
+        return response()->json($foodFact);
     }
 
     /**

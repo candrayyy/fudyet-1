@@ -13,11 +13,20 @@
                 </div>
             </div>
 
-             <div class="col-md-3">
+            <div class="col-md-3">
                  <div class="card card-dashboard-wrapper" style="width: 100%">
                     <div class="card-body card-dashboard">
-                        <h3 class="card-title">Facts</h3>
-                        <h1>{{ $factCount }}</h1>
+                        <h3 class="card-title">Blood Type</h3>
+                        <h1>{{ $bloodTypeCount }}</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                 <div class="card card-dashboard-wrapper" style="width: 100%">
+                    <div class="card-body card-dashboard">
+                        <h3 class="card-title">Allergy Name</h3>
+                        <h1>{{ $allergyNameCount }}</h1>
                     </div>
                 </div>
             </div>

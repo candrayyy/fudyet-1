@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\FoodController;
-use App\Http\Controllers\FactController;
+use App\Http\Controllers\AllergyController;
+use App\Http\Controllers\BloodController;
 use App\Http\Controllers\FoodFactController;
 use App\Http\Controllers\FormController;
 
@@ -36,6 +37,7 @@ Route::group(['middleware' => 'auth'], function () {
    
 
     Route::resource('admin/foods', FoodController::class);
-    Route::resource('admin/facts', FactController::class);
+    Route::resource('admin/blood-fact', BloodController::class);
+    Route::resource('admin/allergy-fact', AllergyController::class);
     Route::resource('admin/rules', FoodFactController::class);
 });
