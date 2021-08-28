@@ -22,9 +22,9 @@ use App\Http\Controllers\FormController;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 
-Route::get('/form', [FormController::class, 'index']);
+Route::get('/form', [FormController::class, 'index'])->name('form');
 Route::post('/form', [FormController::class, 'formSubmit'])->name('form.formsubmit');
 
 Route::get('admin/login', [LoginController::class, 'showFormLogin'])->name('admin.login');

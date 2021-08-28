@@ -222,6 +222,108 @@ body {
     }
 }*/
 
+/* NAV */
+.img-logo {
+    width: 40%;
+    height: auto;
+    /* Recommended - Limit maximum width */
+    max-width: 250px;
+}
+.nav-link {
+    color: #00755f !important;
+    font-weight: 500;
+}
+
+.nav-link-underline:hover {
+    text-decoration: none;
+    border-bottom: #d9ca63 0.125em solid;
+}
+
+.nav-neumorphism {
+    padding: 0.5em 1em;
+    border-radius: 0.6rem;
+    border: none;
+    outline: none;
+    background-color: #f2f2f2;
+    box-shadow: 4px 4px 6px #c4c5c9, -6px -6px 8px #ffffff;
+}
+
+.nav-neumorphism:hover {
+    box-shadow: inset -2px -2px 6px #ffffff, inset -2px -2px 4px #ffffff,
+        inset 2px 2px 2px rgba(255, 255, 255, 0.075),
+        inset 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+/* END NAV */
+
+/* HOME PAGE */
+.text-title-home {
+    color: #00755f;
+    font-weight: 800;
+}
+
+.text-shortdesc-home {
+    color: #4a4737;
+    font-weight: 500;
+}
+
+.btn-recommend-me-home {
+    font-weight: 500;
+    color: #00755f;
+    padding: 0.5em 1em;
+    border-radius: 0.6rem;
+    border: none;
+    outline: none;
+    background-color: #f2f2f2;
+    box-shadow: 4px 4px 6px #c4c5c9, -6px -6px 8px #ffffff;
+}
+
+.btn-recommend-me-home:hover {
+    box-shadow: inset -2px -2px 6px #ffffff, inset -2px -2px 4px #ffffff,
+        inset 2px 2px 2px rgba(255, 255, 255, 0.075),
+        inset 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.card-home {
+    justify-content: center;
+    margin: 0 auto;
+    border: none;
+    outline: none;
+    border-radius: 1rem !important;
+    box-shadow: 4px 4px 6px #c4c5c9, -6px -6px 8px #ffffff;
+}
+
+.card-home:hover {
+    box-shadow: inset -2px -2px 6px #ffffff, inset -2px -2px 4px #ffffff,
+        inset 2px 2px 2px rgba(255, 255, 255, 0.075),
+        inset 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.card-home .card-body {
+    background-color: #f2f2f2;
+    border-radius: 1rem !important;
+}
+
+.card-home .card-body:hover {
+    box-shadow: inset -2px -2px 6px #ffffff, inset -2px -2px 4px #ffffff,
+        inset 2px 2px 2px rgba(255, 255, 255, 0.075),
+        inset 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.icon-home {
+    color: #d9ca63;
+}
+
+.title-card-home {
+    color: #00755f;
+}
+
+.card-desc-home {
+    color: #4a4737;
+}
+
+/* END HOME PAGE */
+
+/* LOGIN PAGE */
 .form-login {
     width: 30%;
     border-radius: 50px;
@@ -258,7 +360,9 @@ body {
         width: 85%;
     }
 }
+/* END LOGIN PAGE */
 
+/* MULTISTEP PAGE */
 .card-dashboard-wrapper {
     background-color: unset !important;
     border: none !important;
@@ -312,9 +416,36 @@ body {
     transition: opacity 2s ease-in;
 }
 
+.btn-recommend-again,
+.btn-download-pdf {
+    font-weight: 500;
+    padding: 0.7em 0.5em;
+    border-radius: 0.6rem;
+    border: none;
+    outline: none;
+    box-shadow: 6px 6px 8px #c4c5c9, -6px -6px 8px #ffffff;
+}
+
+.btn-download-pdf {
+    color: #d6c556;
+}
+.btn-recommend-again {
+    color: #00755f;
+}
+
+.btn-recommend-again:hover {
+    box-shadow: inset -2px -2px 6px #ffffff, inset -2px -2px 4px #ffffff,
+        inset 2px 2px 2px rgba(255, 255, 255, 0.075),
+        inset 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+.btn-download-pdf:hover {
+    box-shadow: inset -2px -2px 6px #ffffff, inset -2px -2px 4px #ffffff,
+        inset 2px 2px 2px rgba(255, 255, 255, 0.075),
+        inset 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
 .table-form-result {
     border: 3px dashed #313131 !important;
-    width: 70% !important;
     margin: 0 auto !important;
 }
 
@@ -325,14 +456,23 @@ body {
 
 .loader {
     display: flex;
-    margin-top: 30px;
     justify-content: center;
     align-items: center;
     background-color: #f7f6f6;
+    height: 100vh;
 }
 
 .img-loader {
-    width: 40%;
+    width: 40vw;
+    height: 60vh;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .img-loader {
+        width: 60vw;
+        height: 50vh;
+    }
 }
 
 .form-section {
@@ -344,7 +484,7 @@ body {
     padding: 1em 2em;
     margin: 0.5em;
     cursor: pointer;
-    color: #d9ca63;
+    color: #00755f;
     font-weight: bold;
     border-radius: 0.25em;
     transition: 0.3s;
@@ -396,3 +536,83 @@ body {
 .form-section .question-circle-radio {
     display: none;
 }
+
+#cowsmilk:checked + .question-button-label {
+    background-color: #00755f;
+    color: #efefef;
+}
+
+#egg:checked + .question-button-label {
+    background-color: #00755f;
+    color: #efefef;
+}
+
+#treenut:checked + .question-button-label {
+    background-color: #00755f;
+    color: #efefef;
+}
+
+#peanut:checked + .question-button-label {
+    background-color: #00755f;
+    color: #efefef;
+}
+
+#shellfish:checked + .question-button-label {
+    background-color: #00755f;
+    color: #efefef;
+}
+
+#wheat:checked + .question-button-label {
+    background-color: #00755f;
+    color: #efefef;
+}
+
+#soy:checked + .question-button-label {
+    background-color: #00755f;
+    color: #efefef;
+}
+
+#fish:checked + .question-button-label {
+    background-color: #00755f;
+    color: #efefef;
+}
+
+.form-section .question-square-checkbox {
+    display: none;
+}
+
+/* END MULTISTEP PAGE */
+
+/* FOOTER */
+.social-github-icon,
+.social-twitter-icon,
+.social-instagram-icon {
+    margin: 0.3rem;
+    color: rgb(102, 100, 100);
+    padding: 0.7em;
+    border-radius: 3rem;
+    border: none;
+    outline: none;
+    background-color: #f2f2f2;
+    box-shadow: 4px 4px 6px #c4c5c9, -6px -6px 8px #ffffff;
+}
+
+.social-github-icon:hover {
+    color: #333333;
+    box-shadow: inset -2px -2px 6px #ffffff, inset -2px -2px 4px #ffffff,
+        inset 2px 2px 2px rgba(255, 255, 255, 0.075),
+        inset 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+.social-twitter-icon:hover {
+    color: #00acee;
+    box-shadow: inset -2px -2px 6px #ffffff, inset -2px -2px 4px #ffffff,
+        inset 2px 2px 2px rgba(255, 255, 255, 0.075),
+        inset 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+.social-instagram-icon:hover {
+    color: #c13584;
+    box-shadow: inset -2px -2px 6px #ffffff, inset -2px -2px 4px #ffffff,
+        inset 2px 2px 2px rgba(255, 255, 255, 0.075),
+        inset 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+/* END FOOTER */

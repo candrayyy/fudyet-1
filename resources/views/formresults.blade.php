@@ -1,23 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+@extends('apphome')
 
-    <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+@section('title', 'Form Results')
+@section('content')
+        
+       
+<div class="container table-responsive form-results mt-5">
 
-    <title>Form Results</title>
-</head>
-<body>
-    <section class="form-results mt-5 mb-5 table-responsive">
-        <div class="text-center mt-4 mb-5">
-            <button onclick="print()">Download as PDF</button>
+        <div class="row">
+            <div class="col-sm-6 mb-3 text-center">
+                <a href="{{route('form')}}"><button class="btn-recommend-again">Recommend again <i class="bi bi-arrow-repeat"></i></button></a>
+            </div>
+            <div class="col-sm-6 mb-2 text-center">
+                <button class="btn-download-pdf" onclick="print()">Download as PDF <i class="bi bi-download"></i></button>
+            </div>
         </div>
 
-        <table class="table table-form-result mt-3" id="table-print">
-                <thead class="text-center">
+            <table class="table container-fluid table-form-result mt-3" id="table-print">
+                <thead class="text-center"> 
                     <th>Categories</th>
                     <th>Foods</th>
                 </thead>
@@ -34,30 +33,17 @@
                         @endforeach
                     </td>
                 </tbody>
-             @endforeach
-        </table>
-    </section>
+            @endforeach
+            </table>
+
+</div>
 
     <div class="loader" id="loader">
-        <img class="img-loader" src="{{ asset('/gif/magic-loader.gif') }}">
+        <img class="img-loader d-block" src="{{ asset('/gif/magic-loader.gif') }}">
     </div>
 
     <script src="{{ asset('/js/loader.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js"></script>
-    <script>
-        const print = () => {
-             var element = document.getElementById("table-print")
-
-             var opt = {
-                filename:     'foods-recommendation-by-fudyet.pdf',
-                image:        { type: 'jpeg', quality: 0.98 },
-                html2canvas:  { scale: 2 },
-                jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
-             };      
-
-             return html2pdf(element, opt)
-        }
-    </script>
-</body>
-</html>
+    <script src="{{asset('/js/print.js')}}"></script>
+@endsection
