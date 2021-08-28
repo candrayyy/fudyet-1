@@ -416,6 +416,17 @@ body {
     transition: opacity 2s ease-in;
 }
 
+.swiper-slide {
+    padding: 3vw;
+}
+
+@media only screen and (max-width: 767px) {
+    /* For mobile phones: */
+    .swiper-slide {
+        padding: 10vw;
+    }
+}
+
 .btn-recommend-again,
 .btn-download-pdf {
     font-weight: 500;
@@ -470,7 +481,7 @@ body {
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
     .img-loader {
-        width: 60vw;
+        width: 80vw;
         height: 50vh;
     }
 }
