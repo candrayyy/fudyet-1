@@ -24,22 +24,22 @@
 
                            <div class="form-section">
                                 <h4 class="mb-5">Do you have any food allergies ?</h4>
-                                <input type="checkbox" class="question-radio-label" id="seafood" name="seafood_free" value="1">
-                                <label for="seafood" class="question-button-label"><div class="blood-icon"><i class="bi bi-droplet"></i></div>Seafood-Free</label>
-                                <input type="checkbox" class="question-radio-label" id="dairy" name="dairy_free" value="2">
-                                <label for="dairy" class="question-button-label"><div class="blood-icon"><i class="bi bi-droplet"></i></div>Dairy-Free</label>
-                                <input type="checkbox" class="question-radio-label" id="seafood" name="seafood_free" value="1">
-                                <label for="seafood" class="question-button-label"><div class="blood-icon"><i class="bi bi-droplet"></i></div>Seafood-Free</label>
-                                <input type="checkbox" class="question-radio-label" id="dairy" name="dairy_free" value="2">
-                                <label for="dairy" class="question-button-label"><div class="blood-icon"><i class="bi bi-droplet"></i></div>Dairy-Free</label>
-                                <input type="checkbox" class="question-radio-label" id="seafood" name="seafood_free" value="1">
-                                <label for="seafood" class="question-button-label"><div class="blood-icon"><i class="bi bi-droplet"></i></div>Seafood-Free</label>
-                                <input type="checkbox" class="question-radio-label" id="dairy" name="dairy_free" value="2">
-                                <label for="dairy" class="question-button-label"><div class="blood-icon"><i class="bi bi-droplet"></i></div>Dairy-Free</label>
-                                <input type="checkbox" class="question-radio-label" id="seafood" name="seafood_free" value="1">
-                                <label for="seafood" class="question-button-label"><div class="blood-icon"><i class="bi bi-droplet"></i></div>Seafood-Free</label>
-                                <input type="checkbox" class="question-radio-label" id="dairy" name="dairy_free" value="2">
-                                <label for="dairy" class="question-button-label"><div class="blood-icon"><i class="bi bi-droplet"></i></div>Dairy-Free</label>
+                                <input type="checkbox" class="question-square-checkbox question-checkbox-label" id="cowsmilk" name="cowsmilk_free" value="1">
+                                <label for="cowsmilk" class="question-button-label"><div class="cowsmilk-icon"><img src="{{asset('png/icons8-dairy-50.png')}}" alt=""></div>Cow's Milk-Free</label>
+                                <input type="checkbox" class="question-square-checkbox question-checkbox-label" id="egg" name="egg_free" value="2">
+                                <label for="egg" class="question-button-label"><div class="egg-icon"><img src="{{asset('png/icons8-no-eggs-50.png')}}" alt=""></div>Egg-Free</label>
+                                <input type="checkbox" class="question-square-checkbox question-checkbox-label" id="treenut" name="treenut_free" value="1">
+                                <label for="treenut" class="question-button-label"><div class="treenut-icon"><img src="{{asset('png/icons8-no-nuts-50.png')}}" alt=""></div>Tree Nut-Free</label>
+                                <input type="checkbox" class="question-square-checkbox question-checkbox-label" id="peanut" name="peanut_free" value="2">
+                                <label for="peanut" class="question-button-label"><div class="peanut-icon"><img src="{{asset('png/icons8-peanut-50.png')}}" alt=""></div>Peanut-Free</label>
+                                <input type="checkbox" class="question-square-checkbox question-checkbox-label" id="shellfish" name="shellfish_free" value="1">
+                                <label for="shellfish" class="question-button-label"><div class="shellfish-icon"><img src="{{asset('png/icons8-no-shellfish-50.png')}}" alt=""></div>Shellfish-Free</label>
+                                <input type="checkbox" class="question-square-checkbox question-checkbox-label" id="wheat" name="wheat_free" value="2">
+                                <label for="wheat" class="question-button-label"><div class="wheat-icon"><img src="{{asset('png/icons8-no-gluten-50.png')}}" alt=""></div>Wheat-Free</label>
+                                <input type="checkbox" class="question-square-checkbox question-checkbox-label" id="soy" name="soy_free" value="1">
+                                <label for="soy" class="question-button-label"><div class="soy-icon"><img src="{{asset('png/icons8-no-soy-50.png')}}" alt=""></div>Soy-Free</label>
+                                <input type="checkbox" class="question-square-checkbox question-checkbox-label" id="fish" name="fish_free" value="2">
+                                <label for="fish" class="question-button-label"><div class="fish-icon"><img src="{{asset('png/icons8-no-fish-50.png')}}" alt=""></div>Fish-Free</label>
                            </div>
 
                            <div class="form-navigation">
@@ -54,41 +54,6 @@
        </div>
    </section>
 
-   <script>
-       $(() => {
-           const $sections = $('.form-section');
-
-           const navigateTo = (index) => {
-               $sections.removeClass('current').eq(index).addClass('current');
-               $('.form-navigation .previous').toggle(index>0);
-               var atTheEnd = index >= $sections.length - 1;
-               $('.form-navigation .next').toggle(!atTheEnd);
-               $('.form-navigation [type=submit]').toggle(atTheEnd);
-           }
-
-           const curIndex = () =>
-           {
-               return $sections.index($sections.filter('.current'));
-           }
-
-           $('.form-navigation .previous').click(() => {
-               navigateTo(curIndex()-1);
-           })
-
-           $('.form-navigation .next').click(() => {
-                $('.recommendation-form').parsley().whenValidate({
-                    group: 'block-' + curIndex()
-                }).done(() => {
-                    navigateTo(curIndex()+1);
-                })
-           })
-
-           $sections.each((index,section) => {
-               $(section).find(':input').attr('data-parsley-group', 'block-'+index);
-           })
-
-           navigateTo(0);
-       })
-   </script>
+   <script src="{{asset('js/multistepform.js')}}"></script>
 
 @endsection
