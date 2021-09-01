@@ -466,14 +466,12 @@ body {
 }
 
 .loader {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: #f7f6f6;
     height: 100vh;
 }
 
 .img-loader {
+    margin: 0 auto;
     width: 40vw;
     height: 60vh;
 }

@@ -39,7 +39,8 @@
 </div>
 
     <div class="loader" id="loader">
-        <img class="img-loader d-block" src="{{ asset('/gif/magic-loader.gif') }}">
+            <img class="img-loader" style="display: block" src="{{ asset('/gif/magic-loader.gif') }}">
+            <p class="text-center">Hold on, currently making magic...</p>
     </div>
 
     <script src="{{ asset('/js/loader.js')}}"></script>

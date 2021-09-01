@@ -1,6 +1,6 @@
 @extends('apphome')
 
-@section('title', 'Form')
+@section('title', 'Form Questions')
 @section('content')
    <section class="form-step">
        <div class="container">
@@ -9,7 +9,6 @@
                    <div class="card-body">
                        <form method="POST" action="{{route('form.formsubmit')}}" class="recommendation-form">
                            @csrf
-                           <!--hard code cuz DB design issue-->
                            <div class="form-section">
                                 <h4 class="mb-5">Your blood type ?</h4>
                                 <input type="radio" class="question-circle-radio question-radio-label" id="a" name="blood_type" value="1" required>
