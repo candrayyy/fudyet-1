@@ -120,7 +120,7 @@
         });
     });
 
-    $('body').on('click', '.deleteBloodType', function (){
+    $('body').on('click', '.deleteBloodFact', function (){
         var id = $(this).data("id");
         var result = confirm("Are You sure want to delete !");
         if(result){

@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@section('title', 'Allergy Name')
+@section('title', 'Alergy Name')
 @section('content')
     <section style="padding-top: 15px">
         <div class="container-fluid">
@@ -120,13 +120,13 @@
         });
     });
 
-    $('body').on('click', '.deleteBloodType', function (){
+    $('body').on('click', '.deleteAllergyFact', function (){
         var id = $(this).data("id");
         var result = confirm("Are You sure want to delete !");
         if(result){
             $.ajax({
                 type: "DELETE",
-                url: "{{ route('blood-fact.store') }}"+'/'+id,
+                url: "{{ route('allergy-fact.store') }}"+'/'+id,
                 success: function (data) {
                     table.draw();
                 },
