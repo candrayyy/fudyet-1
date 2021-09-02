@@ -34,27 +34,27 @@
                                             <label for="egg" class="question-button-label"><div class="egg-icon"><img src="{{asset('png/icons8-no-eggs-50.png')}}" alt=""></div>Egg-Free</label>
                                         </div>
                                         <div class="swiper-slide">
-                                            <input type="checkbox" class="question-square-checkbox question-checkbox-label" id="treenut" name="treenut_free" value="1">
+                                            <input type="checkbox" class="question-square-checkbox question-checkbox-label" id="treenut" name="treenut_free" value="3">
                                             <label for="treenut" class="question-button-label"><div class="treenut-icon"><img src="{{asset('png/icons8-no-nuts-50.png')}}" alt=""></div>Tree Nut-Free</label>
                                         </div>
                                         <div class="swiper-slide">
-                                            <input type="checkbox" class="question-square-checkbox question-checkbox-label" id="peanut" name="peanut_free" value="2">
+                                            <input type="checkbox" class="question-square-checkbox question-checkbox-label" id="peanut" name="peanut_free" value="4">
                                             <label for="peanut" class="question-button-label"><div class="peanut-icon"><img src="{{asset('png/icons8-peanut-50.png')}}" alt=""></div>Peanut-Free</label>
                                         </div>
                                         <div class="swiper-slide">
-                                            <input type="checkbox" class="question-square-checkbox question-checkbox-label" id="shellfish" name="shellfish_free" value="1">
+                                            <input type="checkbox" class="question-square-checkbox question-checkbox-label" id="shellfish" name="shellfish_free" value="5">
                                             <label for="shellfish" class="question-button-label"><div class="shellfish-icon"><img src="{{asset('png/icons8-no-shellfish-50.png')}}" alt=""></div>Shellfish-Free</label>
                                         </div>
                                         <div class="swiper-slide">
-                                            <input type="checkbox" class="question-square-checkbox question-checkbox-label" id="wheat" name="wheat_free" value="2">
+                                            <input type="checkbox" class="question-square-checkbox question-checkbox-label" id="wheat" name="wheat_free" value="6">
                                             <label for="wheat" class="question-button-label"><div class="wheat-icon"><img src="{{asset('png/icons8-no-gluten-50.png')}}" alt=""></div>Wheat-Free</label>
                                         </div>
                                         <div class="swiper-slide">     
-                                            <input type="checkbox" class="question-square-checkbox question-checkbox-label" id="soy" name="soy_free" value="1">
+                                            <input type="checkbox" class="question-square-checkbox question-checkbox-label" id="soy" name="soy_free" value="7">
                                             <label for="soy" class="question-button-label"><div class="soy-icon"><img src="{{asset('png/icons8-no-soy-50.png')}}" alt=""></div>Soy-Free</label>
                                         </div>
                                         <div class="swiper-slide">
-                                            <input type="checkbox" class="question-square-checkbox question-checkbox-label" id="fish" name="fish_free" value="2">
+                                            <input type="checkbox" class="question-square-checkbox question-checkbox-label" id="fish" name="fish_free" value="8">
                                             <label for="fish" class="question-button-label"><div class="fish-icon"><img src="{{asset('png/icons8-no-fish-50.png')}}" alt=""></div>Fish-Free</label>
                                         </div>
                                     </div>
